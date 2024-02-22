@@ -1,6 +1,7 @@
-package ComplexCalc;
+package model.operations.impl.ComplexCalc;
 
-import calculator.Operation;
+import model.operations.Operation;
+import model.ComplexNumber;
 
 public class ComplexAddition implements Operation<ComplexNumber> {
 

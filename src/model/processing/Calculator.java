@@ -1,4 +1,6 @@
-package calculator;
+package model.processing;
+
+import model.operations.Operation;
 
 import java.util.HashMap;
 import java.util.Map;

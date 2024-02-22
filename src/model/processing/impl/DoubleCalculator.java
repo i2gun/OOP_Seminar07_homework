@@ -1,4 +1,6 @@
-import calculator.Calculator;
+package model.processing.impl;
+
+import model.processing.Calculator;
 
 public class DoubleCalculator extends Calculator<Double> {
 
