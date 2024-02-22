@@ -12,26 +12,27 @@ public class Calculator<T> {
     private T lastResult;
     private T lastNum1;
     private T lastNum2;
-    private final boolean[] allSetCheck;
+    private boolean num1check;
+    private boolean num2check;
 
     public Calculator() {
         operations = new HashMap<>();
-        allSetCheck = new boolean[] { false, false, false };
+        num1check = false;
+        num2check = false;
     }
 
     public void addOperation(char operator, Operation<T> operation) {
         operations.put(operator, operation);
-        allSetCheck[2] = true;
     }
 
     public void setNum1(T num) {
         lastNum1 = num;
-        allSetCheck[0] = true;
+        num1check = true;
     }
 
     public void setNum2(T num) {
         lastNum2 = num;
-        allSetCheck[1] = true;
+        num2check = true;
     }
 
     public T calculate (T num1, char operator, T num2) {
@@ -49,7 +50,7 @@ public class Calculator<T> {
     }
 
     public void calculate (char operator) {
-        if (allSetCheck[0] && allSetCheck[1] && allSetCheck[2]) {
+        if (num1check && num2check) {
             lastResult = calculate(lastNum1, operator, lastNum2);
         } else {
             lastResult = null;
